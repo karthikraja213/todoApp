@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List DApp</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1 id="animatedTitle">todoApp</h1>
+    </div>
+
+    <div class="main-container">
+        <!-- Sidebar for options -->
+        <div class="sidebar">
+            <!-- Create Task -->
+            <div>
+                <h3>Create Tasks</h3>
+                <form id="createTaskForm" novalidate>
+                    <div id="taskInputContainer">
+                        <div class="task-item">
+                            <input type="text" id="taskInput" placeholder="Enter task description" required>
+                        </div>
+                    </div>
+                    <button type="button" id="addTaskButton">Add Task</button>
+                    <button type="submit">Save tasks on chain</button>
+                </form>
+            </div>
+    
+            <!-- Edit Task -->
+            <div>
+                <h3>Edit Task</h3>
+                <form id="editTaskForm">
+                    <input type="number" id="editTaskId" placeholder="Task ID" required>
+                    <input type="text" id="editTaskDescription" placeholder="New Description" required>
+                    <button type="submit">Edit Task</button>
+                </form>
+            </div>
+    
+            <!-- Mark Task Complete -->
+            <div>
+                <h3>Mark Task Complete</h3>
+                <form id="completeTaskForm">
+                    <input type="number" id="completeTaskId" placeholder="Task ID" required>
+                    <button type="submit">Mark Complete</button>
+                </form>
+            </div>
+    
+            <!-- Delete Task -->
+            <div>
+                <h3>Delete Task</h3>
+                <form id="deleteTaskForm">
+                    <input type="number" id="deleteTaskId" placeholder="Task ID" required>
+                    <button type="submit">Delete Task</button>
+                </form>
+            </div>
+        </div>
+    
+        <!-- Centered Task List -->
+        <div class="task-container">
+            <h3>Tasks Ready to be Saved</h3>
+            <ul id="taskList"></ul>
+    
+            <h3>Task List</h3>
+            <button id="fetchAllTasksButton">Fetch All Tasks</button>
+            <ul id="globalTasksList"></ul>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
